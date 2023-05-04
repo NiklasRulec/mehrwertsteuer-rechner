@@ -13,6 +13,7 @@ const calcFunction = () => {
   console.log({ moneyInput });
   let moneyLabel = document.querySelector(".netto-brutto-label");
   let mwstOutput = document.querySelector(".mwst-output");
+  let endbetragLabel = document.querySelector(".endbetrag-label");
   let endbetragOutput = document.querySelector(".endbetrag-output");
 
   if (nettoInput == true && prozent19 == true) {
@@ -21,12 +22,13 @@ const calcFunction = () => {
     let bruttoBetrag = moneyInput * 1.19;
     console.log({ bruttoBetrag });
     let bruttoBetragFixed = bruttoBetrag.toFixed(2);
-    endbetragOutput.innerText = bruttoBetragFixed;
+    endbetragOutput.innerText = bruttoBetragFixed + " €";
     let differenz = bruttoBetrag - moneyInput;
     console.log({ differenz });
     let differenzFixed = differenz.toFixed(2);
     console.log({ differenzFixed });
-    mwstOutput.innerText = differenzFixed;
+    mwstOutput.innerText = differenzFixed + " €";
+    endbetragLabel.innerText = "Bruttobetrag (Endpreis)";
 
     // ! ####################################################
   } else if (nettoInput == true && prozent7 == true) {
@@ -35,12 +37,13 @@ const calcFunction = () => {
     let bruttoBetrag = moneyInput * 1.07;
     console.log({ bruttoBetrag });
     let bruttoBetragFixed = bruttoBetrag.toFixed(2);
-    endbetragOutput.innerText = bruttoBetragFixed;
+    endbetragOutput.innerText = bruttoBetragFixed + " €";
     let differenz = bruttoBetrag - moneyInput;
     console.log({ differenz });
     let differenzFixed = differenz.toFixed(2);
     console.log({ differenzFixed });
-    mwstOutput.innerText = differenzFixed;
+    mwstOutput.innerText = differenzFixed + " €";
+    endbetragLabel.innerText = "Bruttobetrag (Endpreis)";
 
     // ! ####################################################
   } else if (bruttoInput == true && prozent19 == true) {
@@ -49,12 +52,14 @@ const calcFunction = () => {
     let nettoBetrag = moneyInput / 1.19;
     console.log({ nettoBetrag });
     let nettoBetragFixed = nettoBetrag.toFixed(2);
-    endbetragOutput.innerText = nettoBetragFixed;
+    endbetragOutput.innerText = nettoBetragFixed + " €";
     let differenz = moneyInput - nettoBetrag;
     console.log({ differenz });
     let differenzFixed = differenz.toFixed(2);
     console.log({ differenzFixed });
-    mwstOutput.innerText = differenzFixed;
+    mwstOutput.innerText = differenzFixed + " €";
+    endbetragLabel.innerText = "Nettobetrag";
+
     // ! ####################################################
   } else if (bruttoInput == true && prozent7 == true) {
     moneyLabel.innerText =
@@ -62,12 +67,14 @@ const calcFunction = () => {
     let nettoBetrag = moneyInput / 1.07;
     console.log({ nettoBetrag });
     let nettoBetragFixed = nettoBetrag.toFixed(2);
-    endbetragOutput.innerText = nettoBetragFixed;
+    endbetragOutput.innerText = nettoBetragFixed + " €";
     let differenz = moneyInput - nettoBetrag;
     console.log({ differenz });
     let differenzFixed = differenz.toFixed(2);
     console.log({ differenzFixed });
-    mwstOutput.innerText = differenzFixed;
+    mwstOutput.innerText = differenzFixed + " €";
+    endbetragLabel.innerText = "Nettobetrag";
+
     // ! ####################################################
   }
 };
