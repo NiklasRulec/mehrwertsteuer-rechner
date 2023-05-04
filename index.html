@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <section>
+      <h1>Mehrwertsteuer-Rechner</h1>
+      <form onsubmit="calcFunction(); return false">
+        <article>
+          <h2>Was soll berechnet werden?</h2>
+          <input type="radio" class="netto-input" name="netto-brutto" checked />
+          <label for="">Mehrwertsteuer aufschlagen</label>
+          <input type="radio" class="brutto-input" name="netto-brutto" />
+          <label for="">Mehrwertsteuer abziehen</label>
+        </article>
+        <article>
+          <input
+            type="radio"
+            class="neunzehn-prozent"
+            name="neunzehn-sieben"
+            checked
+          />
+          <label for="">19%</label>
+          <input type="radio" class="sieben-prozent" name="neunzehn-sieben" />
+          <label for="">7%</label>
+        </article>
+        <article>
+          <p class="netto-brutto-label"></p>
+          <input type="number" class="netto-brutto-input" />
+        </article>
+        <article>
+          <input type="submit" value="Berechnen" />
+        </article>
+      </form>
+
+      <article class="output">
+        <h2>Ergebnis</h2>
+        <div>
+          <h2>Mehrwertsteuerbetrag</h2>
+          <p class="mwst-output"></p>
+        </div>
+        <div>
+          <h2>Bruttobetrag (Endpreis)</h2>
+          <p class="endbetrag-output"></p>
+        </div>
+      </article>
+    </section>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
